@@ -1,0 +1,7 @@
+{
+  "name": "Appcoin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

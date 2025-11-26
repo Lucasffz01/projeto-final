@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Pesquisa de Países</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome do País</ion-label>
+    <ion-input [(ngModel)]="countryName" (ionInput)="onInputChange()"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="searchCountry()">Pesquisar</ion-button>
+
+  <div *ngIf="countryInfo">
+    <h2>{{ countryInfo.name.common }}</h2>
+    <p><strong>Capital:</strong> {{ countryInfo.capital[0] }}</p>
+    <p><strong>Região:</strong> {{ countryInfo.region }}</p>
+    <p><strong>População:</strong> {{ countryInfo.population }}</p>
+    <p><strong>Área:</strong> {{ countryInfo.area }} km²</p>
+
+    <p *ngIf="getCurrency()">
+      <strong>Moeda Local:</strong> 
+      {{ getCurrency().name }} ({{ getCurrency().symbol }})
+    </p>
+
+    <img [src]="countryInfo.flags.png" alt="Bandeira" style="width: 200px;"/>
+  </div>
+
+  <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
+</ion-content>

@@ -1,0 +1,61 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input label="Nome completo" labelPlacement="floating"
+        [(ngModel)]="nome">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="email" label="Email" labelPlacement="floating"
+        [(ngModel)]="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Telefone" labelPlacement="floating"
+        [(ngModel)]="telefone" (ionInput)="mascaraTelefone()">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="CPF" labelPlacement="floating"
+        [(ngModel)]="cpf" (ionInput)="mascaraCPF()">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="date" label="Nascimento" labelPlacement="floating"
+        [(ngModel)]="data_nascimento">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" label="Senha" labelPlacement="floating"
+        [(ngModel)]="senha">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" label="Confirmar Senha" labelPlacement="floating"
+        [(ngModel)]="confirmarSenha">
+      </ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="block" size="large" shape="round"
+    (click)="register()">
+    Criar Conta
+  </ion-button>
+
+</ion-content>

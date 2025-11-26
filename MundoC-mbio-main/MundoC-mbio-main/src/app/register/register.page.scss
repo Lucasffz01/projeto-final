@@ -1,0 +1,14 @@
+ion-content {
+  --padding-top: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+ion-button {
+  margin-top: 20px;
+}
